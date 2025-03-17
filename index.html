@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Deformer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Image Deformer</h1>
+        
+        <div class="upload-section">
+            <label for="imageUpload" class="upload-btn">
+                <span>Choose PNG Image</span>
+                <input type="file" id="imageUpload" accept="image/png">
+            </label>
+            <button id="resetBtn">Reset</button>
+        </div>
+        
+        <div class="controls">
+            <div class="control-group">
+                <h3>Transformations</h3>
+                <div class="control-item">
+                    <label for="rotationSlider">Rotation:</label>
+                    <input type="range" id="rotationSlider" min="-180" max="180" value="0" step="1">
+                    <span id="rotationValue">0°</span>
+                </div>
+                <div class="control-item">
+                    <label for="scaleXSlider">Scale X:</label>
+                    <input type="range" id="scaleXSlider" min="0.1" max="3" value="1" step="0.1">
+                    <span id="scaleXValue">1.0</span>
+                </div>
+                <div class="control-item">
+                    <label for="scaleYSlider">Scale Y:</label>
+                    <input type="range" id="scaleYSlider" min="0.1" max="3" value="1" step="0.1">
+                    <span id="scaleYValue">1.0</span>
+                </div>
+                <div class="control-item">
+                    <label for="translateXSlider">Translate X:</label>
+                    <input type="range" id="translateXSlider" min="-100" max="100" value="0" step="1">
+                    <span id="translateXValue">0px</span>
+                </div>
+                <div class="control-item">
+                    <label for="translateYSlider">Translate Y:</label>
+                    <input type="range" id="translateYSlider" min="-100" max="100" value="0" step="1">
+                    <span id="translateYValue">0px</span>
+                </div>
+            </div>
+            
+            <div class="control-group">
+                <h3>Fixed Points</h3>
+                <div class="buttons-group">
+                    <button id="addFixedPointBtn">Add Fixed Point</button>
+                    <button id="clearFixedPointsBtn">Clear Fixed Points</button>
+                </div>
+                <div id="fixedPointsList"></div>
+            </div>
+        </div>
+        
+        <div class="canvas-container">
+            <canvas id="glCanvas"></canvas>
+            <div class="canvas-message" id="canvasMessage">Upload an image to begin</div>
+        </div>
+    </div>
+    
+    <script src="main.js"></script>
+</body>
+</html>
